@@ -30,9 +30,11 @@
 {{? data.operation.requestBody}}
 > Body parameter
 
-{{? data.bodyParameter.exampleValues.description }}
-> {{= data.bodyParameter.exampleValues.description }}
-{{?}}
+{{~ data.bodyParameters :bp }}
+    {{? bp.exampleValues.description }}
+> {{= bp.exampleValues.description }}
+    {{?}}
+{{~}}
 
 {{= data.utils.getBodyParameterExamples(data) }}
 {{?}}
